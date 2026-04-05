@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="white">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMC Study Path — Points to Commaz</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  [data-theme="white"] {
+    --bg:#f9f6f1;--surface:#fff;--surface2:#f2efe9;--header-bg:rgba(249,246,241,0.95);
+    --border:rgba(26,22,18,0.08);--border-strong:rgba(26,22,18,0.15);
+    --text:#1a1612;--muted:#6b6560;--muted2:#b0aba5;
+    --accent:#c8a96e;--accent-dim:rgba(200,169,110,0.12);--accent-border:rgba(200,169,110,0.4);
+    --p1bg:#eef3fc;--p1ac:#2563eb;--p2bg:#faf0e8;--p2ac:#b45309;
+    --p3bg:#eaf4ee;--p3ac:#15803d;--p4bg:#f5f0fa;--p4ac:#7c3aed;
+    --lhbg:#f2efe9;--ta:#1a1612;--tat:#f9f6f1;--tsbg:#fff;--ft:#b0aba5;
+  }
+  [data-theme="dark"] {
+    --bg:#0a0a0a;--surface:#111;--surface2:#1a1a1a;--header-bg:rgba(10,10,10,0.95);
+    --border:rgba(255,255,255,0.08);--border-strong:rgba(255,255,255,0.15);
+    --text:#fff;--muted:rgba(255,255,255,0.5);--muted2:rgba(255,255,255,0.25);
+    --accent:#c8a96e;--accent-dim:rgba(200,169,110,0.1);--accent-border:rgba(200,169,110,0.35);
+    --p1bg:rgba(37,99,235,0.12);--p1ac:#6eabff;--p2bg:rgba(180,83,9,0.12);--p2ac:#fb923c;
+    --p3bg:rgba(21,128,61,0.12);--p3ac:#4ade80;--p4bg:rgba(124,58,237,0.12);--p4ac:#c084fc;
+    --lhbg:#1a1a1a;--ta:#fff;--tat:#000;--tsbg:#1a1a1a;--ft:rgba(255,255,255,0.25);
+  }
+  [data-theme="grey"] {
+    --bg:#1c1c1e;--surface:#2c2c2e;--surface2:#3a3a3c;--header-bg:rgba(28,28,30,0.95);
+    --border:rgba(255,255,255,0.1);--border-strong:rgba(255,255,255,0.2);
+    --text:#f2f2f7;--muted:rgba(242,242,247,0.5);--muted2:rgba(242,242,247,0.28);
+    --accent:#c8a96e;--accent-dim:rgba(200,169,110,0.1);--accent-border:rgba(200,169,110,0.35);
+    --p1bg:rgba(10,132,255,0.12);--p1ac:#64b5ff;--p2bg:rgba(255,159,10,0.12);--p2ac:#ffb340;
+    --p3bg:rgba(48,209,88,0.12);--p3ac:#5dde8a;--p4bg:rgba(191,90,242,0.12);--p4ac:#da8fff;
+    --lhbg:#3a3a3c;--ta:#f2f2f7;--tat:#1c1c1e;--tsbg:#3a3a3c;--ft:rgba(242,242,247,0.28);
+  }
+  [data-theme="tan"] {
+    --bg:#f5f0e8;--surface:#faf7f2;--surface2:#ece7dc;--header-bg:rgba(245,240,232,0.95);
+    --border:rgba(100,80,40,0.1);--border-strong:rgba(100,80,40,0.22);
+    --text:#2a1f0e;--muted:rgba(42,31,14,0.5);--muted2:rgba(42,31,14,0.3);
+    --accent:#a0722a;--accent-dim:rgba(160,114,42,0.1);--accent-border:rgba(160,114,42,0.35);
+    --p1bg:rgba(30,90,200,0.08);--p1ac:#1a5cbf;--p2bg:rgba(180,90,0,0.08);--p2ac:#a05800;
+    --p3bg:rgba(45,125,70,0.08);--p3ac:#236638;--p4bg:rgba(110,40,180,0.08);--p4ac:#6e28b4;
+    --lhbg:#ece7dc;--ta:#2a1f0e;--tat:#f5f0e8;--tsbg:#faf7f2;--ft:rgba(42,31,14,0.3);
+  }
+  [data-theme="pink"] {
+    --bg:#fdf4f7;--surface:#fff;--surface2:#fce8f0;--header-bg:rgba(253,244,247,0.95);
+    --border:rgba(200,80,120,0.1);--border-strong:rgba(200,80,120,0.2);
+    --text:#3a1020;--muted:rgba(58,16,32,0.5);--muted2:rgba(58,16,32,0.28);
+    --accent:#d4547a;--accent-dim:rgba(212,84,122,0.1);--accent-border:rgba(212,84,122,0.35);
+    --p1bg:rgba(212,84,122,0.08);--p1ac:#c0346a;--p2bg:rgba(180,60,160,0.08);--p2ac:#a0208a;
+    --p3bg:rgba(230,100,80,0.08);--p3ac:#b84030;--p4bg:rgba(140,60,200,0.08);--p4ac:#7c2ab4;
+    --lhbg:#fce8f0;--ta:#d4547a;--tat:#fff;--tsbg:#fff;--ft:rgba(58,16,32,0.28);
+  }
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;min-height:100vh;padding-bottom:80px;transition:background 0.2s,color 0.2s;}
+  .topbar{border-bottom:1px solid var(--border);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;background:var(--header-bg);position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);gap:12px;flex-wrap:wrap;}
+  .topbar-brand{font-size:12px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted2);}
+  .topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .theme-switcher{display:flex;align-items:center;gap:3px;border:1px solid var(--border);border-radius:6px;padding:3px;background:var(--tsbg);}
+  .theme-btn{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:4px 9px;border-radius:4px;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:all 0.15s;white-space:nowrap;}
+  .theme-btn:hover{color:var(--text);}
+  .theme-btn.active{background:var(--ta);color:var(--tat);}
+  .topbar-label{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);}
+  .hero{max-width:720px;margin:0 auto;padding:64px 32px 48px;border-bottom:1px solid var(--border);}
+  .eyebrow{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--accent);}
+  .hero-title{font-family:'DM Serif Display',serif;font-size:clamp(34px,6vw,52px);line-height:1.1;color:var(--text);margin-bottom:24px;letter-spacing:-0.01em;}
+  .hero-title em{font-style:italic;color:var(--accent);}
+  .note-box{background:var(--accent-dim);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:16px 20px;margin-top:28px;}
+  .note-box p{font-size:14px;color:var(--text);line-height:1.65;}
+  .note-box .note-from{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:10px;}
+  .paths{max-width:720px;margin:0 auto;padding:48px 32px 0;display:flex;flex-direction:column;gap:36px;}
+  .path-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--surface);}
+  .path-header{padding:22px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--border);}
+  .path-number{font-family:'DM Serif Display',serif;font-size:40px;line-height:1;color:var(--border-strong);flex-shrink:0;margin-top:-2px;}
+  .path-meta{flex:1;}
+  .path-tag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:8px;}
+  .p1 .path-tag{background:var(--p1bg);color:var(--p1ac);}
+  .p2 .path-tag{background:var(--p2bg);color:var(--p2ac);}
+  .p3 .path-tag{background:var(--p3bg);color:var(--p3ac);}
+  .path-title{font-family:'DM Serif Display',serif;font-size:22px;line-height:1.2;color:var(--text);margin-bottom:6px;}
+  .path-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+  .path-links{padding:4px 0;}
+  .link-item{display:flex;align-items:center;gap:14px;padding:13px 28px;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.15s;}
+  .link-item:last-child{border-bottom:none;}
+  .link-item:hover{background:var(--lhbg);}
+  .link-num{font-family:'DM Serif Display',serif;font-size:13px;color:var(--muted2);min-width:20px;flex-shrink:0;}
+  .yt{width:26px;height:26px;border-radius:5px;background:#ff0000;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .yt svg{width:11px;height:11px;fill:white;}
+  .link-label{flex:1;font-size:13px;font-weight:400;color:var(--text);line-height:1.4;}
+  .link-arrow{font-size:14px;color:var(--muted2);transition:transform 0.15s,color 0.15s;}
+  .link-item:hover .link-arrow{transform:translateX(3px);color:var(--text);}
+  .mentorship-section{max-width:720px;margin:36px auto 0;padding:0 32px;}
+  .mentorship-card{border:1px solid var(--border);border-radius:12px;padding:24px 28px;background:var(--surface);}
+  .mentorship-label{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted2);margin-bottom:8px;}
+  .mentorship-title{font-family:'DM Serif Display',serif;font-size:19px;color:var(--text);margin-bottom:10px;line-height:1.2;}
+  .mentorship-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px;}
+  .mentorship-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text);text-decoration:none;padding:9px 16px;border:1px solid var(--border-strong);border-radius:7px;background:var(--bg);transition:all 0.15s;}
+  .mentorship-link:hover{background:var(--text);color:var(--bg);border-color:var(--text);}
+  .mentorship-link .yt{width:22px;height:22px;border-radius:4px;}
+  .mentorship-link .yt svg{width:9px;height:9px;}
+  .footer{max-width:720px;margin:48px auto 0;padding:24px 32px 0;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+  .footer-brand,.footer-note{font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ft);}
+  .footer-note{font-size:11px;letter-spacing:normal;text-transform:none;}
+  @media(max-width:540px){
+    .topbar{padding:12px 16px;}
+    .hero{padding:40px 16px 36px;}
+    .paths{padding:32px 16px 0;}
+    .path-header{padding:18px 16px;}
+    .link-item{padding:12px 16px;}
+    .mentorship-section{padding:0 16px;}
+    .mentorship-card{padding:20px 18px;}
+    .footer{padding:20px 16px 0;flex-direction:column;gap:6px;align-items:flex-start;}
+    .theme-btn{padding:4px 7px;font-size:10px;}
+  }
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <span class="topbar-brand">Points to Commaz</span>
+  <div class="topbar-right">
+    <div class="theme-switcher">
+      <button class="theme-btn active" data-t="white" onclick="setTheme('white',this)">White</button>
+      <button class="theme-btn" data-t="grey" onclick="setTheme('grey',this)">Grey</button>
+      <button class="theme-btn" data-t="tan" onclick="setTheme('tan',this)">Tan</button>
+      <button class="theme-btn" data-t="pink" onclick="setTheme('pink',this)">Pink</button>
+      <button class="theme-btn" data-t="dark" onclick="setTheme('dark',this)">Dark</button>
+    </div>
+    <span class="topbar-label">Member Resource</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">SMC Study Path</div>
+  <h1 class="hero-title">What I Actually <em>Studied</em></h1>
+  <div class="note-box">
+    <p>New to Smart Money Concepts? This is the material I personally studied to build my foundation. Start from the top and work your way down.</p>
+    <div class="note-from">— Points to Commaz</div>
+  </div>
+</section>
+
+<div class="paths">
+
+  <div class="path-card p1">
+    <div class="path-header">
+      <div class="path-number">01</div>
+      <div class="path-meta">
+        <span class="path-tag">Price Signatures</span>
+        <div class="path-title">Learn how price is delivered</div>
+        <div class="path-desc">The core building blocks — how price moves, where it leaves marks, and what those marks mean.</div>
+      </div>
+    </div>
+    <div class="path-links">
+      <a class="link-item" href="https://www.youtube.com/watch?v=pv2-R-STviA" target="_blank" rel="noopener"><span class="link-num">1</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">False Breakouts</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=PIYh0CxoY9c" target="_blank" rel="noopener"><span class="link-num">2</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Order Blocks</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=shPGUz9pU-A" target="_blank" rel="noopener"><span class="link-num">3</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Vacuum Block</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=FOUzW0QmsfI" target="_blank" rel="noopener"><span class="link-num">4</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Mitigation Blocks</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=UrS-mtGHtAA" target="_blank" rel="noopener"><span class="link-num">5</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">The Breaker</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=oALYX0HCSYw" target="_blank" rel="noopener"><span class="link-num">6</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Rejection Block</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=HTQgH11W37o" target="_blank" rel="noopener"><span class="link-num">7</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Liquidity Void</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=FgacYSN9QEo" target="_blank" rel="noopener"><span class="link-num">8</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Fair Value Gap</span><span class="link-arrow">→</span></a>
+    </div>
+  </div>
+
+  <div class="path-card p2">
+    <div class="path-header">
+      <div class="path-number">02</div>
+      <div class="path-meta">
+        <span class="path-tag">Core Content</span>
+        <div class="path-title">How it all connects</div>
+        <div class="path-desc">Market structure, trade setups, and the concepts that tie the price signatures together.</div>
+      </div>
+    </div>
+    <div class="path-links">
+      <a class="link-item" href="https://www.youtube.com/watch?v=XwYYWBttWro" target="_blank" rel="noopener"><span class="link-num">1</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Market Makers</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=0LhteuLVuDU&t=38s" target="_blank" rel="noopener"><span class="link-num">2</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Elements to a Trade Setup</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=dIT4HTFYGGo" target="_blank" rel="noopener"><span class="link-num">3</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">AMD — Power of 3 (PO3)</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=K4LtfujVpJs" target="_blank" rel="noopener"><span class="link-num">4</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Price Swings</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=22XkhpJR5eA" target="_blank" rel="noopener"><span class="link-num">5</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Liquidity Runs</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=UF5J0nEBc0E" target="_blank" rel="noopener"><span class="link-num">6</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Timeframe Selection</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=B7_cjybYQ0g" target="_blank" rel="noopener"><span class="link-num">7</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">What to Focus on Right Now</span><span class="link-arrow">→</span></a>
+    </div>
+  </div>
+
+  <div class="path-card p3">
+    <div class="path-header">
+      <div class="path-number">03</div>
+      <div class="path-meta">
+        <span class="path-tag">Risk Management</span>
+        <div class="path-title">Protect what you build</div>
+        <div class="path-desc">The part most people skip. Don't. Study this alongside everything else.</div>
+      </div>
+    </div>
+    <div class="path-links">
+      <a class="link-item" href="https://www.youtube.com/watch?v=tlKC9nvLRK0" target="_blank" rel="noopener"><span class="link-num">1</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Risk Management</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=pFdW8wdR9sQ&list=PLi6C4hAr2caXkdphTCsHg3gmobp-MbL3k&index=4" target="_blank" rel="noopener"><span class="link-num">2</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Fear of Losing</span><span class="link-arrow">→</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=mjVHmE1gVMg&list=PLi6C4hAr2caXkdphTCsHg3gmobp-MbL3k&index=1" target="_blank" rel="noopener"><span class="link-num">3</span><div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div><span class="link-label">Growing Small Accounts</span><span class="link-arrow">→</span></a>
+    </div>
+  </div>
+
+</div>
+
+<div class="mentorship-section">
+  <div class="mentorship-card">
+    <div class="mentorship-label">Looking for more?</div>
+    <div class="mentorship-title">ICT 2022 Full Mentorship</div>
+    <div class="mentorship-desc">The 2022 ICT Full Mentorship takes everything above and shows you how it fits together into a structured trading model. It's not required, but if you want to see how ICT applies it all, it's there for free on YouTube.</div>
+    <a class="mentorship-link" href="https://www.youtube.com/watch?v=kt6V4ai60fI&list=PLVgHx4Z63paYiFGQ56PjTF1PGePL3r69s&index=1" target="_blank" rel="noopener">
+      <div class="yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div>
+      Watch on YouTube →
+    </a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">Points to Commaz © 2025</div>
+  <div class="footer-note">SME-ILA Subscriber Resource</div>
+</footer>
+
+<script>
+  function setTheme(t,btn){
+    document.documentElement.setAttribute('data-theme',t);
+    document.querySelectorAll('.theme-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    localStorage.setItem('ptc-smc-theme',t);
+  }
+  const saved=localStorage.getItem('ptc-smc-theme');
+  if(saved){
+    document.documentElement.setAttribute('data-theme',saved);
+    const btn=document.querySelector(`[data-t="${saved}"]`);
+    if(btn){document.querySelectorAll('.theme-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  }
+</script>
+</body>
+</html>
